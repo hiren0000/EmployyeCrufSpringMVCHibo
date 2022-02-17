@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="employee_crud")
 public class Employee 
 {
 	@Id
@@ -14,18 +16,20 @@ public class Employee
 	private String eName;
 	private String eSurname;
 	private String eDesi;
+	private String email;
 	
 	public Employee()
 	{
 		
 	}
 
-	public Employee(int eId, String eName, String eSurname, String eDesi) {
+	public Employee(int eId, String eName, String eSurname, String eDesi, String email) {
 		super();
 		this.eId = eId;
 		this.eName = eName;
 		this.eSurname = eSurname;
 		this.eDesi = eDesi;
+		this.email = email;
 	}
 
 	public int geteId() {
@@ -58,6 +62,15 @@ public class Employee
 
 	public void seteDesi(String eDesi) {
 		this.eDesi = eDesi;
+	}
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override

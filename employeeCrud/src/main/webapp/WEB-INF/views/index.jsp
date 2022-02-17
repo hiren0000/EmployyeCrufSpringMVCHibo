@@ -11,6 +11,7 @@
     <th>EmployeeName</th>
     <th>EmployeeSurname</th>
     <th>EmployeeDesignation</th>
+    <th>EmployeeEmail</th>
     <th>Actions</th>
   </tr>
   <tr>
@@ -18,6 +19,7 @@
     <td><%=e.geteName() %></td>
     <td><%=e.geteSurname() %></td>
     <td><%=e.geteDesi() %></td>
+    <td><%=e.getEmail() %></td>
     <td><a href="update/<%=e.geteId()%>">Edit</a></td>
     <td><a href="delete/<%=e.geteId()%>">Delete</a></td>
   </tr>

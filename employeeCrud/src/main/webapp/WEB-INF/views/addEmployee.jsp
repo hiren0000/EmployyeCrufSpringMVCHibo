@@ -12,6 +12,7 @@
 	EmployeeName:<input type="text" name="eName"><br>
 	EmployeeSuraname:<input type="text" name="eSurname"><br>
 	EmployeeDesignation:<input type="text" name="eDesi"><br>
+	EmployeeEmail:<input type="email" name="email"><br>
 	<input type="submit" value="Add">
     <a href="<%=request.getContextPath()%>/">Back</a>	
 	

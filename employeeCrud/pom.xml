@@ -21,6 +21,22 @@
 	    <artifactId>spring-webmvc</artifactId>
 	    <version>5.3.13</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>5.3.13</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-support</artifactId>
+	    <version>5.3.13</version>
+	</dependency>
+
+
     
     <!-- My sql dependency -->
 	<dependency>
@@ -42,6 +58,36 @@
 	    <artifactId>hibernate-core</artifactId>
 	    <version>5.5.4.Final</version>
 	</dependency>
+    
+    <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+	<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>javax.mail-api</artifactId>
+	    <version>1.6.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+	<dependency>
+	    <groupId>com.sun.mail</groupId>
+	    <artifactId>javax.mail</artifactId>
+	    <version>1.6.2</version>
+	</dependency>
+
+	
+	
+	<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+	<dependency>
+	    <groupId>javax.activation</groupId>
+	    <artifactId>activation</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	
+	 <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.2</version>
+    </dependency>
+	
     
     
   </dependencies>
