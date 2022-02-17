@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.view.RedirectView;
 
 import employeeCrud.dao.EmployeeDao;
+import employeeCrud.mail.Email;
 import employeeCrud.model.Employee;
 
 @Controller
@@ -21,6 +22,9 @@ public class MainController
 { 
 	@Autowired
 	private EmployeeDao employeeDao;
+	
+	@Autowired
+	private Email email;
 	
 	
 	@RequestMapping("/")
@@ -47,6 +51,7 @@ public class MainController
 	public RedirectView form(@ModelAttribute Employee emp, HttpServletRequest request)
 	{
 		System.out.println(emp);
+	    email.sendEmail(emp.getEmail());
 		employeeDao.saveEmp(emp);
 		RedirectView rd = new RedirectView();
 		rd.setUrl(request.getContextPath()+"/");
