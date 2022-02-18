@@ -1,6 +1,7 @@
 package employeeCrud.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -51,7 +52,12 @@ public class MainController
 	public RedirectView form(@ModelAttribute Employee emp, HttpServletRequest request)
 	{
 		System.out.println(emp);
-	    email.sendEmail(emp.getEmail());
+		
+		//Sending Otp for the Verification
+		Random ra = new Random();
+		long otp = ra.nextLong(999999);
+		
+	    email.sendEmail(emp.getEmail(), otp);
 		employeeDao.saveEmp(emp);
 		RedirectView rd = new RedirectView();
 		rd.setUrl(request.getContextPath()+"/");

@@ -16,7 +16,7 @@ public class Email
 		}
 		
    
-		public void sendEmail(String receiverEmail)
+		public void sendEmail(String receiverEmail, long otp)
 		{
 			String senderEmail = "lifeofprogrammer13@gmail.com";
 			
@@ -25,7 +25,7 @@ public class Email
 			msg.setFrom(senderEmail);
 			msg.setTo(receiverEmail);
 			msg.setSubject("OTP Verification");
-			msg.setText("Hello there this is the exmaple of simple sedning email to the dynamic users");
+			msg.setText("Hello there, please use the below OTP "+"\n"+otp);
 			
 			mailSender.send(msg);
 			

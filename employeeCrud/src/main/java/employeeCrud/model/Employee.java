@@ -17,6 +17,7 @@ public class Employee
 	private String eSurname;
 	private String eDesi;
 	private String email;
+	private long OTP;
 	
 	public Employee()
 	{
@@ -71,6 +72,14 @@ public class Employee
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public long getOTP() {
+		return OTP;
+	}
+
+	public void setOTP(long OTP) {
+		OTP = OTP;
 	}
 
 	@Override
