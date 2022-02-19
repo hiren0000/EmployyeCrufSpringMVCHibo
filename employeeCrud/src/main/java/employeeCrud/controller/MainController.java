@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
 import employeeCrud.dao.EmployeeDao;
@@ -62,6 +63,45 @@ public class MainController
 		RedirectView rd = new RedirectView();
 		rd.setUrl(request.getContextPath()+"/");
 		return rd;
+	}
+	
+	//login
+	@RequestMapping("/login")
+	public String loginEmp()
+	{
+		
+		return "login";
+	}
+	
+	//form handler
+	@RequestMapping(value = "/logform-handler", method = RequestMethod.POST)
+	public RedirectView logInform(@RequestParam("email") String lmail, HttpServletRequest request,Model m)
+	{
+		RedirectView rd = new RedirectView();
+	   Employee exEmp = employeeDao.login(lmail);
+	  
+	   
+  try {
+	   
+		  if(exEmp == null)
+		  {
+			  m.addAttribute("msg" ,"Invalid Credentials");
+			  rd.setUrl("login");		 
+		  }
+		  
+		  else
+		  {  		 
+			  rd.setUrl(request.getContextPath()+"/");
+			  m.addAttribute("msg", "Welcome"+exEmp.geteName());
+			  return rd;  
+		  }
+	  
+	   }catch (Exception e) {
+		System.out.println("sm prb wid logInform function"+e);
+	   }
+	  
+	   return rd;
+	  
 	}
 	
 	//deleting employee
