@@ -25,6 +25,10 @@
   </tr>
  <%} %>
 </table>
+<br><br>
+
+<a href="addEmp">Register</a>
+<a href="login">LogIn</a>
 
 </body>
 </html>

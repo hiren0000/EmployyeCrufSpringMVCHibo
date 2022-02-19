@@ -27,7 +27,7 @@ public class Email
 			msg.setSubject("OTP Verification");
 			msg.setText("Hello there, please use the below OTP "+"\n"+otp);
 			
-			mailSender.send(msg);
+			//mailSender.send(msg);
 			
 		}
 	
